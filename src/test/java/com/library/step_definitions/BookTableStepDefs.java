@@ -10,7 +10,7 @@ import java.util.Map;
 
 import static org.junit.Assert.assertEquals;
 
-public class BookTableStepDefs {
+public class  BookTableStepDefs {
     BooksPage booksPage = new BooksPage();
 
     @Then("book information must match the database for {string}")
@@ -29,7 +29,7 @@ public class BookTableStepDefs {
 
         String query = "select name, isbn,year,author,description from books\n" +
                 "where name = '"+bookName+"'";
-
+                //dynamically we changed:bookName
         //since we are getting only one row, we will use getRowMap method
         Map<String, Object> dbData = DBUtils.getRowMap(query);
 
